@@ -2,7 +2,7 @@ import json
 
 def write_cases():
     print('Writing cases, recovered, and deaths to cases.in...')
-    with open('../data/data.json', 'r') as f:
+    with open('../public/data/data.json', 'r') as f:
         dict = json.load(f)
     caz = []
     rec = []
@@ -15,7 +15,7 @@ def write_cases():
             caz.append(str(conf) + ' ')
             rec.append(str(reco) + ' ')
             dth.append(str(deth) + ' ')
-    with open('../data/cases.in', 'w') as f:
+    with open('../public/data/cases.in', 'w') as f:
         f.write(str(len(caz)) + '\n')
         for i in range(len(caz)):
             f.write(caz[i] + ' ' + rec[i] + ' ' + dth[i])
