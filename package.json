@@ -1,0 +1,23 @@
+{
+  "name": "corona",
+  "version": "1.0.0",
+  "description": "Python scripts that track the evolution of the novel coronavirus, a.k.a. the COVID-19 disease, in Romania, my home country.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanpatrichi/corona.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanpatrichi/corona/issues"
+  },
+  "homepage": "https://github.com/stefanpatrichi/corona#readme",
+  "dependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
