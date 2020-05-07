@@ -13,11 +13,5 @@ def main():
     get_json()
     write_cases()
     plot()
+
 main()
-# schedule
-# schedule.every().day.at('10:00').do(main)
-"""
-while True:
-    schedule.run_pending()
-    time.sleep(60)
-"""

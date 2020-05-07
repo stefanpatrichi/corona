@@ -1,9 +1,20 @@
 const http = require('http');
 const fs = require('fs');
-http.createServer(function(req, res) {
-  fs.readFile('data/cases.in', function(err, data) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write(data);
-    res.end();
+
+function get_last(filename, cb) {
+  fs.readFile(filename, function(err, data) {
+    if(err) throw err;
+
+    var lines = data.toString('utf-8').split('\n');
+    cb(null, lines[lines.length - 2]);
   });
-}).listen(8080);
+}
+
+function write_last(err, line) {
+  http.createServer(function(req, res) {
+    res.write(line);
+    res.end();
+  }).listen(8080);
+}
+
+get_last('public/data/cases.in', write_last);
