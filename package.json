@@ -4,7 +4,7 @@
   "description": "Python scripts that track the evolution of the novel coronavirus, a.k.a. the COVID-19 disease, in Romania, my home country.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
