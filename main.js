@@ -10,7 +10,11 @@ function get_last(filename, cb) {
   });
 }
 
-function write_last(err, line) {
+function sleep(m) {
+  return new Promise(resolve => setTimeout(resolve, m));
+}
+
+async function write_last(err, line) {
   exec('cd src && python3 main.py', function (error, stdout, stderr) {
     if(error) {
       console.log('error: ' + error.message);
@@ -18,6 +22,7 @@ function write_last(err, line) {
     }
     console.log(stdout);
   });
+  await sleep(1000);
   http.createServer(function(req, res) {
     res.write(line);
     res.end();
