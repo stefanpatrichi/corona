@@ -23,9 +23,8 @@ async function write_last(err, line) {
     console.log(stdout);
   });
   await sleep(1000);
-  http.createServer(function(req, res) {
-    res.write(line);
-    res.end();
+  http.createServer((req, res) => {
+    res.end(line);
   }).listen(8080);
 }
 
