@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const { exec } = require('child_process');
 function get_last(filename, cb) {
   fs.readFile(filename, function(err, data) {
     if(err) throw err;
