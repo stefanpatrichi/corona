@@ -11,13 +11,6 @@ function get_last(filename, cb) {
 }
 
 function write_last(err, line) {
-  exec('cd src && python3 main.py', function (error, stdout, stderr) {
-    if(error) {
-      console.log('error: ' + error.message);
-      return;
-    }
-    console.log(stdout);
-  });
   http.createServer((req, res) => {
     res.end(line);
   }).listen(8080);
